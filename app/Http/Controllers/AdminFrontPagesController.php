@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AdminFrontPagesController extends Controller
 {
     public function getAdminLoginPage(){
-        
+        return view('admin.adminLogin');
     }
 }
