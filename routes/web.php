@@ -18,3 +18,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin',[AdminFrontPagesController::class,'getAdminLoginPage']);
+
+//Route::post('/checkAdmin')
+
+Route::prefix('/admin')->group(function (){
+    Route::get('/getTeacherEditForm',[AdminFrontPagesController::class,'getTeacherEditForm'])->name('getTeacherEditForm');
+    Route::get('/getSliderEditForm',[AdminFrontPagesController::class,'getSliderEditForm'])->name('getSliderEditForm');
+    Route::get('/getGeneralSection',[AdminFrontPagesController::class,'getGeneralSection'])->name('getGeneralSection');
+    Route::get('/getCurses',[AdminFrontPagesController::class,'getCurses'])->name('getCurses');
+    Route::get('/getEvents',[AdminFrontPagesController::class,'getEvents'])->name('getEvents');
+    Route::get('/getStudentsOpinion',[AdminFrontPagesController::class,'getStudentsOpinion'])->name('getStudentsOpinion');
+
+});
